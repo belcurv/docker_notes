@@ -2,9 +2,9 @@
 
 >Notes and screenshots from: https://www.youtube.com/watch?v=T25Z4CUwYjE
 
-All processes compete for the same CPU cycles, same memory and same disk.
+All processes compete for the same CPU cycles, same memory and same disk. Docker is a solution to add process isolation.
 
-Docker is a solution to this - adds process isolation.
+It packages your application into one standardised unit, wrapping it into a complete file system that contains everything needed to run on a server.
 
 ### Processes as "Containers"
 
