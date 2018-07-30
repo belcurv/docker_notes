@@ -30,12 +30,8 @@ Any change to the `Dockerfile` means we have to rebuild the container. So:
 docker build . -t belcurv-node:latest
 ```
 
-We no longer need the interactive terminal (the `-it` flag), but we can specify the `-d` flag which means when we start up this container, it will automatically run in the background.
-
-Then we can run the container:
+We no longer need the interactive terminal (the `-it` flag), but we can specify the `-d` flag (for _detach_) which means when we start up this container, it will automatically run in the background.
 
 ```
 docker run -d -p 3000:8000 eae332462b24
 ```
-
-`-d` returns control to the terminal.
