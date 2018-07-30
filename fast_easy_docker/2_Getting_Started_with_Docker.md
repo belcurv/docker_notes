@@ -131,7 +131,7 @@ FROM node:8.11.3-alpine
 WORKDIR /app
 ```
 
-If the `/app` directory doesn't exist, Docker will create it. Now we'll copy our files into it. The `ADD` command takes 2 parameters, a source and a destination directory. We want to copy from `.` to the new `.app` directory:
+If the `/app` directory doesn't exist, Docker will create it. Now we'll copy our files into it. The `ADD` command takes 2 parameters, a source and a destination directory. We want to copy from `.` to the new `/app` directory:
 
 ```
 FROM node:8.11.3-alpine
@@ -166,13 +166,13 @@ That will dump us at the `/app` path in our container. If we `ls` we'll see the 
 
 We could launch `server.js` from the container's shell, but let's just run it directly.
 
-BUT - since Docker containers run in a virtual network, we have to map a local port to our container. We do that with the `-p` flag. The syntax is `local_port:container:port`, so we'll map local port 3000 to our server's listening port 8000:
+BUT - since Docker containers run in a virtual network, we have to map a local port to our container. We do that with the `-p` flag. The syntax is `local_port:container_port`, so we'll map local port 3000 to our server's listening port 8000:
 
 ```
 $ docker run -p 3000:8000 -it eae332462b24 node server.js
 ```
 
-We can "detatch" our terminal from the currently running container by holding down Ctrl and pressing `p` `q`
+We can "detatch" our terminal from the currently running container by holding down `Ctrl` and pressing `p` `q`
 
 We can verify with `docker ps` - we'll see our node server is running.
 
